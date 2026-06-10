@@ -10,6 +10,7 @@ This copy removes HubSpot CMS module fields and HubL templates. Dictionary entri
 npm install
 npm run dev
 npm run build
+npm run build:pages
 npm start
 ```
 
@@ -30,7 +31,9 @@ HUBSPOT_HUBDB_TABLE_ID=318438928
 HUBDB_REVALIDATE_SECONDS=60
 ```
 
-The page revalidates HubDB data every 60 seconds by default.
+On a server-capable Next.js host, the page revalidates HubDB data every 60 seconds
+by default. On GitHub Pages, the table is fetched during the GitHub Actions build
+and published as static HTML.
 
 ## Local Data Shape
 
@@ -58,7 +61,19 @@ If the table becomes private again, run the same command with `HUBSPOT_ACCESS_TO
 
 ## HubDB Note
 
-Because the app fetches HubDB from a server component, it should be hosted on a Next-capable platform such as Vercel, Netlify, or a Node server. If you need static-only hosting later, convert the HubDB table to local data during build or move the content into another database.
+The GitHub Pages workflow publishes the app to:
+
+```text
+https://maiaflow.github.io/dictionary-next/
+```
+
+GitHub Pages is static hosting, so newly published HubDB changes appear after the
+workflow runs again. Push to `main` or run the `Deploy GitHub Pages` workflow
+manually from GitHub Actions to rebuild from the current table.
+
+If you need live content updates without rebuilding, host on a Next-capable
+platform such as Vercel, Netlify, or a Node server, or move the content behind a
+client-safe API.
 
 - keep the dictionary as checked-in static data
 - fetch from a private backend/API route using a server-side HubSpot token

@@ -1,7 +1,7 @@
 import { DictionaryBrowser } from "@/components/DictionaryBrowser";
 import { getDictionaryEntriesFromHubDb } from "@/lib/hubdb";
 
-export const revalidate = 60;
+export const dynamic = "force-static";
 
 export default async function Home() {
   const dictionaryEntries = await getDictionaryEntriesFromHubDb();

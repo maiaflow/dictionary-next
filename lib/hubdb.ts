@@ -71,6 +71,18 @@ function getRevalidateSeconds() {
     : DEFAULT_REVALIDATE_SECONDS;
 }
 
+function getHubDbFetchOptions(): RequestInit & {
+  next?: { revalidate: number };
+} {
+  if (process.env.GITHUB_PAGES === "true") {
+    return { cache: "force-cache" };
+  }
+
+  return {
+    next: { revalidate: getRevalidateSeconds() },
+  };
+}
+
 function getHubDbRowsUrl(after?: string) {
   const portalId = process.env.HUBSPOT_PORTAL_ID || DEFAULT_PORTAL_ID;
   const tableId = process.env.HUBSPOT_HUBDB_TABLE_ID || DEFAULT_TABLE_ID;
@@ -91,9 +103,7 @@ export async function getDictionaryEntriesFromHubDb(): Promise<DictionaryEntry[]
   let after: string | undefined;
 
   do {
-    const response = await fetch(getHubDbRowsUrl(after), {
-      next: { revalidate: getRevalidateSeconds() },
-    });
+    const response = await fetch(getHubDbRowsUrl(after), getHubDbFetchOptions());
 
     if (!response.ok) {
       throw new Error(`HubDB request failed: ${response.status} ${response.statusText}`);
