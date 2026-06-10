@@ -1,0 +1,188 @@
+.wrapper {
+  background: var(--dictionary-module-background, #ffffff);
+  border: 1px solid var(--dictionary-module-border, #d7dee8);
+  border-radius: 8px;
+  color: var(--dictionary-module-text, #243243);
+  margin: 0 auto;
+  max-width: 920px;
+  padding: 24px;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.header {
+  align-items: baseline;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.count,
+.empty {
+  margin: 0;
+  opacity: 0.75;
+}
+
+.alphabetNav {
+  align-items: center;
+  border-bottom: 1px solid var(--dictionary-module-border, #d7dee8);
+  border-top: 1px solid var(--dictionary-module-border, #d7dee8);
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.letterLink,
+.letterDisabled {
+  align-items: center;
+  border-radius: 6px;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 28px;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.letterLink {
+  background: var(--dictionary-alphabet-letter-background-color, #f8fafc);
+  border: 0;
+  color: var(--dictionary-color-link);
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+}
+
+.letterLink:hover,
+.letterLink:focus,
+.letterLinkActive {
+  background: var(--dictionary-alphabet-letter-hover-background-color, #494a52);
+  color: var(--dictionary-color-background);
+}
+
+.letterDisabled {
+  color: var(--dictionary-color-link);
+  opacity: 0.35;
+}
+
+.scroller {
+  max-height: 640px;
+  overflow-y: auto;
+  padding-right: 8px;
+  scroll-behavior: smooth;
+}
+
+.section {
+  scroll-margin-top: 16px;
+}
+
+.section + .section {
+  border-top: 1px solid var(--dictionary-module-section-border, #e6ebf1);
+  margin-top: 24px;
+  padding-top: 20px;
+}
+
+.section h3 {
+  margin: 0 0 12px;
+}
+
+.entries {
+  display: grid;
+  gap: 12px;
+}
+
+.entry {
+  background: var(--dictionary-module-surface, #f7f9fb);
+  border: 1px solid var(--dictionary-module-section-border, #e6ebf1);
+  border-radius: 8px;
+  color: var(--dictionary-module-text, #243243);
+  font-size: 21px;
+  font-weight: 400;
+  padding: 16px;
+}
+
+.entryHeader {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.entryHeader h4 {
+  color: var(--dictionary-color-heading, #425b76);
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.partOfSpeech {
+  color: #65758a;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+.definition {
+  margin: 8px 0 0;
+}
+
+.excerpt {
+  color: var(--dictionary-color-heading, #425b76);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  margin-top: 8px;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.styledText :where(p, ul, ol) {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+}
+
+.styledText :where(ul, ol) {
+  padding-left: 1.4rem;
+}
+
+.styledText > :first-child {
+  margin-top: 0;
+}
+
+.styledText > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 18px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .scroller {
+    max-height: 560px;
+    padding-right: 0;
+  }
+}
