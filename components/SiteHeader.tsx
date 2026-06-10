@@ -3,10 +3,8 @@ import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const logoImages = {
-  light:
-    "https://21495103.hs-sites.com/hs-fs/hubfs/black.png?width=700&height=700&name=black.png",
-  dark:
-    "https://21495103.hs-sites.com/hs-fs/hubfs/0026368034_25.png?width=700&height=700&name=0026368034_25.png",
+  light: "/dictionary-logo-light.png",
+  dark: "/dictionary-logo-dark.png",
 };
 
 export function SiteHeader() {
