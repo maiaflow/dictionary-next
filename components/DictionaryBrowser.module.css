@@ -18,6 +18,7 @@
 }
 
 .header h1 {
+  font-size: 43px;
   margin: 0;
 }
 
@@ -172,13 +173,66 @@
 
 @media (max-width: 640px) {
   .wrapper {
-    padding: 18px;
+    padding: 12px;
   }
 
   .header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 6px;
+    align-items: baseline;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .count,
+  .empty {
+    font-size: 13px;
+  }
+
+  .count {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .alphabetNav {
+    gap: 0;
+    grid-template-columns: repeat(26, minmax(0, 1fr));
+    margin-bottom: 16px;
+    padding: 8px 0;
+  }
+
+  .letterLink,
+  .letterDisabled {
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    min-height: 30px;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .section h3 {
+    font-size: 21px;
+  }
+
+  .entry {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .entryHeader h4 {
+    font-size: 21px;
+  }
+
+  .partOfSpeech {
+    font-size: 13px;
+  }
+
+  .excerpt {
+    font-size: 12px;
   }
 
   .scroller {

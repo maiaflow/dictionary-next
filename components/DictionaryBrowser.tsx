@@ -53,8 +53,13 @@ export function DictionaryBrowser({
     <section className={styles.wrapper} aria-label="Dictionary">
       <div className={styles.header}>
         <h1>Dictionary</h1>
-        <p className={styles.count}>
-          {visibleEntriesCount} {visibleEntriesCount === 1 ? "entry" : "entries"}
+        <p
+          className={styles.count}
+          aria-label={`${visibleEntriesCount} ${
+            visibleEntriesCount === 1 ? "entry" : "entries"
+          }`}
+        >
+          {visibleEntriesCount}
         </p>
       </div>
 
