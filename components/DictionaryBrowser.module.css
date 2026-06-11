@@ -59,11 +59,19 @@
   line-height: inherit;
 }
 
-.letterLink:hover,
-.letterLink:focus,
-.letterLinkActive {
+.letterLink:hover {
+  color: var(--dictionary-color-link-hover);
+}
+
+.letterLinkActive,
+.letterLinkActive:hover {
   background: var(--dictionary-alphabet-letter-hover-background-color, #494a52);
   color: var(--dictionary-color-background);
+}
+
+.letterLink:focus-visible {
+  outline: 2px solid var(--dictionary-color-link-hover);
+  outline-offset: 2px;
 }
 
 .letterDisabled {
