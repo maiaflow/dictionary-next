@@ -54,7 +54,9 @@ html[data-theme="dark"] {
 
 html {
   background: var(--dictionary-color-background);
+  max-width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
   transition: background-color 0.25s ease;
 }
 
@@ -68,7 +70,9 @@ body {
   font-weight: 400;
   line-height: 1.55;
   margin: 0;
+  max-width: 100%;
   min-height: 100%;
+  overflow-x: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -349,13 +353,18 @@ html[data-theme="dark"] .theme-toggle__moon {
 
   .site-main {
     min-height: calc(100dvh - var(--dictionary-mobile-header-height));
+    overflow-x: hidden;
+    width: 100%;
   }
 
   .page-shell {
     display: flex;
     min-height: calc(100dvh - var(--dictionary-mobile-header-height));
+    min-width: 0;
+    overflow-x: hidden;
     padding-block: var(--dictionary-mobile-shell-padding-top)
       var(--dictionary-mobile-shell-padding-bottom);
+    width: 100%;
   }
 
   .site-footer {

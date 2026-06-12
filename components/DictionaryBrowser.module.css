@@ -5,6 +5,8 @@
   color: var(--dictionary-module-text, #243243);
   margin: 0 auto;
   max-width: 920px;
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 24px;
   transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
@@ -194,6 +196,7 @@
         var(--dictionary-mobile-shell-padding-bottom, 0px)
     );
     min-height: 0;
+    max-width: 100%;
     overflow: hidden;
     padding: 12px;
     width: 100%;
