@@ -179,9 +179,24 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(
+      100dvh - var(--dictionary-mobile-header-height, 50px) -
+        var(--dictionary-mobile-shell-padding-top, 10px) -
+        var(--dictionary-mobile-shell-padding-bottom, 0px)
+    );
+    max-height: calc(
+      100dvh - var(--dictionary-mobile-header-height, 50px) -
+        var(--dictionary-mobile-shell-padding-top, 10px) -
+        var(--dictionary-mobile-shell-padding-bottom, 0px)
+    );
+    min-height: 0;
+    overflow: hidden;
     padding: 12px;
+    width: 100%;
   }
 
   .header {
@@ -192,12 +207,12 @@
   }
 
   .header h1 {
-    font-size: 23px;
+    font-size: 24px;
   }
 
   .count,
   .empty {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .count {
@@ -206,8 +221,8 @@
   }
 
   .alphabetNav {
-    gap: 0;
-    grid-template-columns: repeat(26, minmax(0, 1fr));
+    gap: 4px;
+    grid-template-columns: repeat(13, minmax(0, 1fr));
     margin-bottom: 16px;
     padding: 8px 0;
   }
@@ -215,7 +230,7 @@
   .letterLink,
   .letterDisabled {
     border-radius: 4px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     min-height: 30px;
     min-width: 0;
@@ -223,28 +238,30 @@
   }
 
   .section h3 {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   .entry {
-    font-size: 16px;
+    font-size: 17px;
     padding: 14px;
   }
 
   .entryHeader h4 {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   .partOfSpeech {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .excerpt {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .scroller {
-    max-height: 560px;
+    flex: 1 1 auto;
+    max-height: none;
+    min-height: 0;
     padding-right: 0;
   }
 }
